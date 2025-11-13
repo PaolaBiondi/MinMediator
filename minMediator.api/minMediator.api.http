@@ -1,0 +1,11 @@
+@minMediator.api_HostAddress = http://localhost:5083
+
+GET {{minMediator.api_HostAddress}}/MinMediator/
+Accept: application/json
+
+###
+
+GET {{minMediator.api_HostAddress}}/MinMediator/ping
+Accept: application/json
+
+###
