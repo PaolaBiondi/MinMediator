@@ -10,9 +10,4 @@ namespace minMediator.domain
     {
         Task<TResponse> Send<TRequest, TResponse>(TRequest request);
     }
-
-    public interface IRequestHandler<TRequest, TResponse>
-    {
-        Task<TResponse> Handle(TRequest request);
-    }
 }
