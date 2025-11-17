@@ -9,7 +9,19 @@ flowchart TD
 	B -->|DI container registration| C[API]
 	C -->|Finds Handler| D[SimpleMediator: IMediator]  
 	D --> |Sends Request| H
-```
+```  
+
+## ArchUnit.Net  
+[manual](https://archunitnet.readthedocs.io/en/latest/)  
+
+``` ps1
+dotnet add package TngTech.ArchUnitNET
+dotnet add package TngTech.ArchUnitNET.xUnit
+```  
+
+IObjectProvider<IType> declares collection of all types. It is more generic
+as it retrieves all types (classes, interfaces, enums..) .
+IObjectProvider<Class> declares collection of all classes, is more specific as it retrieves only classes.  
 
 
 

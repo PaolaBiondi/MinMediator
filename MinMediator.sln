@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minMediator.domain", "minMe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minMediator.services", "minMediator.services\minMediator.services.csproj", "{07C7803C-3D95-42FB-9E93-2E7054C492E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minMediator.tests", "minMediator.tests\minMediator.tests.csproj", "{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{07C7803C-3D95-42FB-9E93-2E7054C492E2}.Release|x64.Build.0 = Release|Any CPU
 		{07C7803C-3D95-42FB-9E93-2E7054C492E2}.Release|x86.ActiveCfg = Release|Any CPU
 		{07C7803C-3D95-42FB-9E93-2E7054C492E2}.Release|x86.Build.0 = Release|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Debug|x64.Build.0 = Debug|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Debug|x86.Build.0 = Debug|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Release|x64.ActiveCfg = Release|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Release|x64.Build.0 = Release|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Release|x86.ActiveCfg = Release|Any CPU
+		{F4D851CB-01E5-4E87-840C-C7BB4037AD6C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
