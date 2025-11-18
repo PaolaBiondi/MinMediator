@@ -4,6 +4,7 @@ using ArchUnitNET.Domain;
 using ArchUnitNET.Fluent;
 using ArchUnitNET.Loader;
 using ArchUnitNET.xUnit;
+using System.Diagnostics;
 using static ArchUnitNET.Fluent.ArchRuleDefinition;
 
 public class ArchUnitTests
@@ -25,6 +26,15 @@ public class ArchUnitTests
         IObjectProvider<IType> apiLayer = Types().That()
                                                    .ResideInAssembly(typeof(minMediator.api.SimpleMediator).Assembly.FullName)
                                                    .As("api Layer");
+        
+        foreach(var type in typeof(minMediator.api.SimpleMediator).Assembly.GetTypes())
+        {
+            Debug.WriteLine(type.Name);
+        }
+
+        var firstAssembly = serviceLayer.GetObjects(Architecture);
+
+
 
         IArchRule rule = Types().That().Are(serviceLayer)
             .Should()

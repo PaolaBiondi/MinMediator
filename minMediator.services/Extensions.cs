@@ -7,7 +7,7 @@ public static class Extensions
 {
     public static IServiceCollection AddMinMediatorServices(this IServiceCollection services)
     {
-        services.AddScoped<IRequestHandler<PingRequest, string>, PingHandler>();
+        services.AddScoped<IRequestHandler<PingRequest, Result<string>>, PingHandler>();
         return services;
     }
 }

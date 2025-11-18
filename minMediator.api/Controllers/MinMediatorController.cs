@@ -24,7 +24,13 @@ public class MinMediatorController : ControllerBase
     [HttpGet("Ping")]
     public async Task<IActionResult> Ping()
     {
-        var response =  await _mediator.Send<PingRequest, string>(new PingRequest { Message = "Ping" });
-        return Ok(response);
+        var response =  await _mediator.Send<PingRequest, Result<string>>(new PingRequest { Message = "Ping" });
+        
+        if (response.Errors.Any())
+        {
+            return BadRequest(response.Errors.First().Message);
+        }
+
+        return Ok(response.Value);
     }
 }

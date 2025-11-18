@@ -8,12 +8,15 @@ using System.Threading.Tasks;
 namespace minMediator.services
 {
 
-    internal class PingHandler : IRequestHandler<PingRequest, string>
+    internal class PingHandler : IRequestHandler<PingRequest, Result<string>>
     {
-        public async Task<string> Handle(PingRequest request)
+        public async Task<Result<string>> Handle(PingRequest request)
         {
             await Task.Delay(10);
-            return $"{DateTimeOffset.Now} Pong";
+            if (Random.Shared.Next(2) % 2 == 0 )
+                return Result<string>.Success($"{DateTimeOffset.Now} Pong");
+
+            return Result<string>.Failure(new Exception("Failed"));
         }
     }
 }
