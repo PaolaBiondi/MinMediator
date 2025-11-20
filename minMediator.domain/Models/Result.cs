@@ -11,7 +11,8 @@ public class Result<T>
     protected Result(T? value, Exception err )
     {
         IList<Exception> ex = new List<Exception>();
-        ex.Add(err);
+        if (err is not null)
+            ex.Add(err);
 
         this.Value = value;
         _errors.AddRange(ex);

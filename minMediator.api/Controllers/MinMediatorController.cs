@@ -24,12 +24,15 @@ public class MinMediatorController : ControllerBase
     [HttpGet("Ping")]
     public async Task<IActionResult> Ping()
     {
+        _logger.LogInformation("Start {method}", nameof(Ping));
         var response =  await _mediator.Send<PingRequest, Result<string>>(new PingRequest { Message = "Ping" });
         
         if (response.Errors.Any())
         {
             return BadRequest(response.Errors.First().Message);
         }
+
+        _logger.LogInformation("End {method}", nameof(Ping));
 
         return Ok(response.Value);
     }
