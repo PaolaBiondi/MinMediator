@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using minMediator.domain;
 
@@ -35,5 +37,18 @@ public class MinMediatorController : ControllerBase
         _logger.LogInformation("End {method}", nameof(Ping));
 
         return Ok(response.Value);
+    }
+
+    [HttpGet("ShortTimeout")]
+    public async Task<IActionResult> ShortTimeout(CancellationToken cancellationToken= default)
+    {
+        _logger.LogInformation("Start {methodnow} {now}", nameof(ShortTimeout), DateTime.Now.ToLongDateString());
+        using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        cts.CancelAfter(TimeSpan.FromMilliseconds(5));
+
+        await Task.Delay(2000, cts.Token);
+
+        _logger.LogInformation("End {method} {now}", nameof(ShortTimeout), DateTime.Now.ToLongDateString());
+        return Ok();
     }
 }

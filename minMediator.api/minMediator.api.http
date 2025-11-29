@@ -9,3 +9,9 @@ GET {{minMediator.api_HostAddress}}/MinMediator/ping
 Accept: application/json
 
 ###
+
+GET {{minMediator.api_HostAddress}}/MinMediator/ShortTimeout
+Accept: application/json
+
+###
+
