@@ -11,6 +11,10 @@ flowchart TD
 	D --> |Sends Request| H
 ```  
 
+## serilog  
+
+https://github.com/serilog/serilog-aspnetcore
+
 ## ArchUnit.Net  
 [manual](https://archunitnet.readthedocs.io/en/latest/)  
 
