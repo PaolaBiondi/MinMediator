@@ -12,6 +12,7 @@ Log.Logger = new LoggerConfiguration()
 try
 {
     var builder = WebApplication.CreateBuilder(args);
+    
     builder.Services.AddSerilog((sp, cl) =>
         cl.ReadFrom.Configuration(builder.Configuration)
         .ReadFrom.Services(sp)
@@ -19,6 +20,7 @@ try
         .WriteTo.Console());
 
     // Add services to the container.
+    builder.AddServiceDefaults();
 
     builder.Services.AddControllers();
     // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -28,6 +30,8 @@ try
     builder.Services.AddMinMediatorServices();
 
     var app = builder.Build();
+
+    app.MapDefaultEndpoints();
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
@@ -53,3 +57,4 @@ finally
 {
     await Log.CloseAndFlushAsync();
 }
+

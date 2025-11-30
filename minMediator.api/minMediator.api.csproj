@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aspire\MinMediator.ServiceDefaults\MinMediator.ServiceDefaults.csproj" />
     <ProjectReference Include="..\minMediator.domain\minMediator.domain.csproj" />
     <ProjectReference Include="..\minMediator.services\minMediator.services.csproj" />
   </ItemGroup>
