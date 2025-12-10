@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<!-- https://gist.github.com/PaolaBiondi/119fa792f36d255dbbcecff4be5a1aca -->
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
