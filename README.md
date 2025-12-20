@@ -11,6 +11,10 @@ flowchart TD
 	D --> |Sends Request| H
 ```  
 
+## EFC  
+migrations can be applied to production 
+https://learn.microsoft.com/en-us/ef/core/cli/dotnet#aspnet-core-environment
+
 ## serilog  
 
 https://github.com/serilog/serilog-aspnetcore
