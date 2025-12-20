@@ -3,21 +3,18 @@ using minMediator.domain;
 using minMediator.services;
 using Serilog;
 
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console()
-    .WriteTo.Debug()
-    .Enrich.FromLogContext()
-    .CreateBootstrapLogger();
 
 try
 {
     var builder = WebApplication.CreateBuilder(args);
-    
-    builder.Services.AddSerilog((sp, cl) =>
-        cl.ReadFrom.Configuration(builder.Configuration)
-        .ReadFrom.Services(sp)
-        .Enrich.FromLogContext()
-        .WriteTo.Console());
+
+    Log.Logger = new LoggerConfiguration()
+        .ReadFrom.Configuration(builder.Configuration)
+        .CreateLogger();
+
+    builder.Services.AddSerilog();
+
+    Log.Information("Starting up the application");
 
     // Add services to the container.
     builder.AddServiceDefaults();
@@ -55,6 +52,7 @@ catch (Exception ex)
 }
 finally
 {
+    Log.Information("Closing application");
     await Log.CloseAndFlushAsync();
 }
 
